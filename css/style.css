@@ -1,0 +1,120 @@
+/* Reseta as margens e paddings de TODOS os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'SpecialGothicCondensedOne-Regular';
+    src: url('./font/pt-fonts-letras/Special_Gothic_Condensed_One/SpecialGothicCondensedOne-Regular.ttf');
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    font-family: 'SpecialGothicCondensedOne-Regular', sans-serif;
+}
+
+/* BANNER AZUL: Centraliza o texto vertical e horizontalmente */
+.banner-logo-inicial {
+    height: 100px;
+    background-color: #0008ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-logo-inicial h1 {
+    color: white; /* Texto em branco para contrastar com o fundo azul */
+    font-size: 70px;
+}
+
+/* CONTAINER DO MENU */
+.menu-navegacao-inicio {
+    display: flex;
+    justify-content: center;
+    
+    ;
+}
+
+/* A LISTA DE BOTÕES (Onde a mágica do Flexbox acontece) */
+.bottons-navegacao-inicio {
+    list-style: none;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;     
+    background-color: #000000;
+    gap: 19px;           
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 0px;
+    width: 100%;
+}
+
+.bottons-navegacao-inicio li {
+    display: flex;
+}
+
+/* LINKS / BOTÕES INTERNOS */
+.bottons-navegacao-inicio a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 6px 16px;
+    display: block;
+    font-size: 18px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.bottons-navegacao-inicio a:hover {
+    border-color: #f1f1f4;
+    border: 2px solid
+}
+
+.bottons-navegacao-inicio a.ativo {
+    border: #0008ff 2px solid;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.container-pesquisa {
+    position: relative;
+    display: inline-block;
+}
+
+.marging-perquisabarr-pioto {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 35px;
+    width: 700px;
+    border-radius: 50px;
+    padding: 10px;
+    padding-right: 40px;
+    /* ADICIONADO: espaço reservado para o ícone não sobrepor o texto digitado */
+}
+
+.icone-pesquisa {
+    position: absolute;
+    right: 2%;
+    top: 60%;
+    transform: translateY(-50%);
+    color: #000000;
+    cursor: pointer;
+}
+
+.button-SUPORTE-PARA-DEFICIENTES {
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+}
+
+.butto-CONFIGURAÇÃO {
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+}
+
