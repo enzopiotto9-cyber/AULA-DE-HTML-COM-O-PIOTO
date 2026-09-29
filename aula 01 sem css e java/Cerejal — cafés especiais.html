@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cerejal — cafés especiais do interior paulista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1E4; --ink:#2A1A10; --muted:#5E5347; --line:#C9D0B8;
+  --cherry:#B8222B; --leaf:#2F5D3A; --card:#F8F9F2; --on-cherry:#fff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1A120C;--ink:#F1E9DC;--muted:#B8A995;--line:#3A2A1E;--cherry:#E5484F;--leaf:#8FC19A;--card:#241811;--on-cherry:#1A120C}
+}
+:root[data-theme="dark"]{--bg:#1A120C;--ink:#F1E9DC;--muted:#B8A995;--line:#3A2A1E;--cherry:#E5484F;--leaf:#8FC19A;--card:#241811;--on-cherry:#1A120C}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Newsreader',Georgia,serif;font-size:1.15rem;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.brand,button,label{font-family:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.brand{font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
+.brand i{display:inline-block;width:.7em;height:.7em;border-radius:50%;background:var(--cherry);margin-right:.35em}
+nav a{color:var(--ink);text-decoration:none;margin-left:20px;font-size:1rem}
+nav a:hover{text-decoration:underline;text-decoration-color:var(--cherry);text-underline-offset:5px}
+a:focus-visible,input:focus-visible,button:focus-visible{outline:3px solid var(--cherry);outline-offset:3px}
+.hero{padding:56px 0 40px}
+h1{font-size:clamp(2.8rem,9vw,6.4rem);line-height:.95;letter-spacing:-.04em;font-weight:800;margin:0 0 24px;max-width:11ch}
+.lead{max-width:34rem;color:var(--muted);margin:0 0 32px}
+.busca{display:flex;max-width:520px;border:2px solid var(--ink);border-radius:999px;background:var(--card);overflow:hidden}
+.busca input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;padding:14px 22px}
+.busca input:focus-visible{outline:none}
+.busca:focus-within{outline:3px solid var(--cherry);outline-offset:3px}
+.busca button{border:0;background:var(--cherry);color:var(--on-cherry);font-weight:800;padding:0 26px;cursor:pointer;font-size:1rem}
+.dica{font-size:.95rem;color:var(--muted);margin:12px 0 0}
+.lista{margin:16px 0 0;padding:0;list-style:none;border-top:2px solid var(--ink)}
+.item{display:grid;grid-template-columns:1.1fr 2fr auto;gap:8px 32px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+.item h3{margin:0;font-size:1.5rem;letter-spacing:-.02em}
+.item p{margin:0;color:var(--muted)}
+.nota{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--leaf);font-size:1.25rem;white-space:nowrap}
+.nota small{font-weight:400;color:var(--muted);font-size:.85rem}
+.vazio{padding:32px 0;color:var(--muted)}
+.vazio button{margin-left:8px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:6px 16px;cursor:pointer}
+.sec{padding:72px 0 24px}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:-.03em;line-height:1.05;margin:0 0 20px;max-width:16ch}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:32px 56px}
+.duas p{margin:0 0 1em}
+footer{margin-top:72px;border-top:2px solid var(--ink);padding:28px 0 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--muted);font-size:1rem}
+footer a{color:var(--ink)}
+@media(max-width:700px){
+  .item{grid-template-columns:1fr auto}
+  .item p{grid-column:1/-1;order:3}
+  .duas{grid-template-columns:1fr}
+  nav a:first-child{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><i></i>Cerejal</div>
+    <nav><a href="#variedades">Variedades</a><a href="#fazenda">A fazenda</a><a href="#contato">Contato</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Café colhido no interior de São Paulo.</h1>
+      <p class="lead">Pequenos lotes, colheita à mão e torra feita na semana do envio. Procure uma variedade pelo nome ou pelo sabor que você gosta.</p>
+      <form class="busca" role="search" id="form">
+        <input type="search" id="busca" placeholder="Ex.: chocolate, frutado, caramelo" aria-label="Pesquisar variedades" autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+      <p class="dica" id="contagem" aria-live="polite"></p>
+    </section>
+
+    <section id="variedades" aria-label="Variedades">
+      <ul class="lista" id="lista"></ul>
+      <div class="vazio" id="vazio" hidden>Nenhuma variedade encontrada para essa busca.<button type="button" id="limpar">Limpar busca</button></div>
+    </section>
+
+    <section class="sec" id="fazenda">
+      <h2>Uma fazenda pequena, de propósito.</h2>
+      <div class="duas">
+        <p>A Cerejal cultiva café a 900 metros de altitude, em talhões de poucos hectares. Cada lote é colhido, seco em terreiro e provado antes de ser vendido.</p>
+        <p>Por isso o estoque é limitado. Quando uma variedade acaba, ela sai da lista até a próxima safra, que começa em maio.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="contato">
+      <h2>Quer receber um lote?</h2>
+      <p>Escreva para <a href="mailto:oi@cerejal.example">oi@cerejal.example</a> com a variedade e a quantidade. Respondemos em até dois dias úteis.</p>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Cerejal</span><span>Site de exemplo, com dados fictícios.</span></footer>
+</div>
+
+<script>
+var cafes=[
+ {n:"Bourbon Amarelo",d:"Doce e macio, com caramelo, mel e um toque de laranja.",a:"900 m",s:87},
+ {n:"Catuaí Vermelho",d:"Equilibrado, com notas de chocolate ao leite e amêndoa.",a:"880 m",s:85},
+ {n:"Mundo Novo",d:"Corpo cheio, chocolate amargo e final longo de castanha.",a:"920 m",s:84},
+ {n:"Acaiá",d:"Frutado e cítrico, com acidez de tangerina e açúcar mascavo.",a:"950 m",s:86},
+ {n:"Geisha",d:"Floral e delicado, lembra jasmim, pêssego e chá.",a:"1000 m",s:90},
+ {n:"Obatã",d:"Encorpado e achocolatado, com baixa acidez e cacau.",a:"870 m",s:83}
+];
+var lista=document.getElementById("lista"),busca=document.getElementById("busca"),
+    vazio=document.getElementById("vazio"),cont=document.getElementById("contagem");
+function norm(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function esc(t){return t.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function render(){
+  var q=norm(busca.value.trim());
+  var r=cafes.filter(function(c){return norm(c.n+" "+c.d).indexOf(q)>-1});
+  lista.innerHTML=r.map(function(c){
+    return '<li class="item"><h3>'+esc(c.n)+'</h3><p>'+esc(c.d)+' Altitude: '+c.a+'.</p><div class="nota">'+c.s+' <small>pontos</small></div></li>';
+  }).join("");
+  vazio.hidden=r.length>0;
+  cont.textContent=q?(r.length+(r.length===1?" variedade encontrada":" variedades encontradas")):"Mostrando todas as "+cafes.length+" variedades.";
+}
+busca.addEventListener("input",render);
+document.getElementById("form").addEventListener("submit",function(e){e.preventDefault();render();document.getElementById("variedades").scrollIntoView()});
+document.getElementById("limpar").addEventListener("click",function(){busca.value="";render();busca.focus()});
+render();
+</script>
+</body>
+</html>

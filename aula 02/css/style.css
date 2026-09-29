@@ -81,40 +81,28 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: bold;
 }
 
-.container-pesquisa {
-    position: relative;
-    display: inline-block;
+.busca {
+  display: flex;
+  max-width: 400px;
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
-.marging-perquisabarr-pioto {
-    margin-top: 10px;
-    margin-left: 10px;
-    height: 35px;
-    width: 700px;
-    border-radius: 50px;
-    padding: 10px;
-    padding-right: 40px;
-    /* ADICIONADO: espaço reservado para o ícone não sobrepor o texto digitado */
+.busca input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
 }
 
-.icone-pesquisa {
-    position: absolute;
-    right: 2%;
-    top: 60%;
-    transform: translateY(-50%);
-    color: #000000;
-    cursor: pointer;
-}
-
-.button-SUPORTE-PARA-DEFICIENTES {
-    height: 35px;
-    width: 35px;
-    border-radius: 20px;
-}
-
-.butto-CONFIGURAÇÃO {
-    height: 35px;
-    width: 35px;
-    border-radius: 20px;
+.busca button {
+  padding: 10px 16px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
 }
 
